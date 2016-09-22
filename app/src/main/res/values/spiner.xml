@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="idm">
+        <item>Pilih Salah satu Indomaret</item>
         <item>Indomaret Sawojajar</item>
         <item>Indomaret Dinoyo</item>
         <item>Indomaret Sukun</item>
