@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="idm">
+        <item>Indomaret Sawojajar</item>
+        <item>Indomaret Dinoyo</item>
+        <item>Indomaret Sukun</item>
+        <item>Indomaret Soekarno Hatta</item>
+        <item>Indomaret Blimbing</item>
+    </string-array>
+</resources>
