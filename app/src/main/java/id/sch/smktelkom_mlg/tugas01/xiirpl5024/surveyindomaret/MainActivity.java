@@ -69,6 +69,22 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     {
         if(isValid())
         {
+            if(Pilih == 0 )
+            {
+                cbPilih = "Tidak mendapatkan";
+            }
+            else if(Pilih == 1 )
+            {
+                cbPilih = "Mendapatkan 1";
+            }
+            else if(Pilih == 2 )
+            {
+                cbPilih = "Mendapatkan 2";
+            }
+            else if(Pilih == 3 )
+            {
+                cbPilih = "Mendapatkan semua";
+            }
             String comen = etComent.getText().toString();
             String irb;
 
@@ -132,23 +148,5 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     public void onCheckedChanged(CompoundButton compoundButton, boolean pilih) {
         if(pilih) Pilih+=1;
         else Pilih-=1;
-
-        if(Pilih == 0 )
-        {
-            cbPilih = "Tidak mendapatkan";
-        }
-        else if(Pilih == 1 )
-        {
-            cbPilih = "Mendapatkan 1";
-        }
-        else if(Pilih == 2 )
-        {
-            cbPilih = "Mendapatkan 2";
-        }
-        else if(Pilih == 3 )
-        {
-            cbPilih = "Mendapatkan semua";
-        }
-
     }
 }
