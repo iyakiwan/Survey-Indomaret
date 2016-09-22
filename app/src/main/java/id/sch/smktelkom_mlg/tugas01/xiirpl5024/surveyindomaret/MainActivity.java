@@ -1,5 +1,7 @@
 package id.sch.smktelkom_mlg.tugas01.xiirpl5024.surveyindomaret;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -66,7 +69,44 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     {
         if(isValid())
         {
+            String comen = etComent.getText().toString();
+            String irb;
 
+            if (rgPuas.getCheckedRadioButtonId()!= -1)
+            {
+                RadioButton rb = (RadioButton) findViewById(rgPuas.getCheckedRadioButtonId());
+                irb = rb.getText().toString();
+            }
+            else
+            {
+                irb = null;
+            }
+
+            if (irb == null)
+            {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
+                builder1.setMessage("Anda belum mengisi input kepuasan!!");
+                builder1.setCancelable(true);
+
+                builder1.setNeutralButton(
+                        "Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                                //startActivity(new Intent(CourseActivity.this, MainActivity.class));
+                            }
+                        });
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+            }
+            else
+            {
+                tvHasil.setText("-> Pelanggan telah berkunjung di "+ spIndomaret.getSelectedItem().toString()+"\n" +
+                        "-> Pelanggan "+ cbPilih +" Pelayanan dari para karyawan\n-> Pelanggan "+ irb+" dengan pelayanan Indomaret\n" +
+                        "-> Pelanggan memberikan Komentar dan saran: " + comen+" ");
+
+                kondisiawal();
+            }
         }
     }
 
